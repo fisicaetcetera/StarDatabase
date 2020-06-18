@@ -4,7 +4,7 @@ function preload(){
 }
 function setup() {
   createCanvas(400, 400); 
-  console.log(gatinho);
+  console.log(gato);
 }
 function draw() {
   background(0);
