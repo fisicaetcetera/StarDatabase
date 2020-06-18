@@ -1,6 +1,6 @@
 var gato = [];
 function preload(){
-  gato = loadJSON("./gatinho.json");
+  gato = loadJSON("gatinho.json");
 }
 function setup() {
   createCanvas(400, 400); 
