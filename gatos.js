@@ -1,4 +1,4 @@
-var gato = [];
+let gato;
 function preload(){
   gato = loadJSON("gatinho.json");
 }
