@@ -13,3 +13,4 @@ function draw() {
   text(data.star[0].dist, 10,50);
   text(data.star[1].dist, 10,50);
   text(data.star[1].dist, 10,50);
+}
