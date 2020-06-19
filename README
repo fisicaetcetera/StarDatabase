@@ -1,6 +1,6 @@
 From me:
 
-First of all, thanks jaycrossler!!!
+First of all, thanks Jay Crossler!!!
 
 There is a plotting code, using the named-stars datafile.  Already in 3D, using webgl.  The color of the stars don't seem to be right.
 The defaul is from the point of view of a slowly rotating sun.  Helps to see the nearby stars.  
