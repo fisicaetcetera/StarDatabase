@@ -2,7 +2,7 @@ let data;
 let star;
 function preload(){
   data = loadJSON("stars_named.json");
-
+}
 function setup() {
   createCanvas(400, 400); 
   star = data.star;
