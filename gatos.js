@@ -10,7 +10,7 @@ function draw() {
   background(0);
   fill(255,110,20);
   text(data.star[0].starName, 10,50);
-  text(data.star[0].dist, 10,60);
-  text(data.star[1].dist, 10,70);
-  text(data.star[1].dist, 10,80);
+  text(data.star[0].dist, 10,70);
+  text(data.star[1].starName, 10,80);
+  text(data.star[1].dist, 10,90);
 }
