@@ -1,3 +1,18 @@
+From me:
+
+There is a plotting code, using the named-stars datafile.  Already in 3D, using webgl.  The color of the stars don't seem to be right.
+The defaul is from the point of view of a slowly rotating sun.  Helps to see the nearby stars.  
+Plans:
+1. Will try first to draw the constelations, or part of, using closest stars.
+2. Adding magnitude to the file
+3. A camera could sail through the stars (more fun, will start with this.)
+
+
+
+
+==============
+ from jaycrossler/StarDatabase:
+ 
 This Stellar Database is made based on inputs from the ISDB (http://www.stellar-database.com/roll-your-own.html).  I took the isdb.mdb file and moved all of the data into an Excel XLS file, then rewrote many of the SQL queries as Excel functions.
 
 NOTE: Writing complex data lookups/searching/linking using Excel is very inefficient, and results in multiple headaches.  But, I was on a long flight, and was bored, and thought it'd be fun to see how far Excel functions have advanced since I used them 15 years ago.
