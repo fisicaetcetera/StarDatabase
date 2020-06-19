@@ -1,6 +1,6 @@
 let data;
 function preload(){
-  data = loadJSON("gatinho.json");
+  data = loadJSON("stars_named.json");
 }
 function setup() {
   createCanvas(400, 400); 
@@ -9,7 +9,7 @@ function setup() {
 function draw() {
   background(0);
   fill(255,110,20);
-  text(data.gato[0].nome, 10,50);
+  text(data.star[0].nome, 10,50);
   text(data.gato[1].nome, 10, 70);
   text(data.gato[0].revolution, 10, 90);
   text(data.gato[0].raiva, 10,110);
