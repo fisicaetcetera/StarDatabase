@@ -8,9 +8,9 @@ function setup() {
 }
 function draw() {
   background(0);
-  fill(255,110,20);
+  fill(data.star[1].color);
   text(data.star[0].starName, 10,50);
-  text(data.star[0].dist, 20,50);
+  text(data.star[0].dist, 30,50);
   text(data.star[1].starName, 10,70);
-  text(data.star[1].dist, 25,70);
+  text(data.star[1].dist, 30,70);
 }
