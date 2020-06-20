@@ -5,9 +5,11 @@ First of all, thanks Jay Crossler!!!
 There is a plotting code, using the named-stars datafile.  Already in 3D, using webgl.  The color of the stars don't seem to be right.
 The defaul is from the point of view of a slowly rotating sun.  Helps to see the nearby stars.  
 Plans:
-1. Will try first to draw the constelations, or part of, using closest stars.
+1. Will try first to draw the constelations, or part of, using closest stars.  (Changeg the color of nearby stars to blue
+and discovered that we are parte of a piramid constelation.
+
 2. Adding magnitude to the file
-3. A camera could sail through the stars (more fun, will start with this.)
+3. A camera could sail through the stars (already working - but the user cannot control the motion, yet.)
 
 
 
