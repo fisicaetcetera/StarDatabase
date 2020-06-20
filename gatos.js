@@ -13,7 +13,7 @@ function preload() {
 
 function setup() {
   star = data.star;
-  createCanvas(710, 400, WEBGL);
+  createCanvas(1366,768, WEBGL);
   //console.log(data);
 }
 
