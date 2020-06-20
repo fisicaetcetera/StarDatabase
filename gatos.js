@@ -34,7 +34,7 @@ function draw() {
     //rotateY(angle);
     translate(star[i].galX * 10, star[i].galY * 10, star[i].galZ * 10);
     distancia = star[i].dist;
-    if(distancia < 9) {
+    if(distancia < 20) {
      cor = "#0000FF"; 
     } else 
     {
