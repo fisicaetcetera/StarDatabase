@@ -15,7 +15,7 @@ function preload() {
 
 function setup() {
   star = data.star;
-  createCanvas(710, 400, WEBGL);
+  createCanvas(1366, 768, WEBGL);
   console.log(star[2].starName);
   alfax = star[2].galX;
   alfay = star[2].galY;
