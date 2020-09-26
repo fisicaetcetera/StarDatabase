@@ -10,10 +10,10 @@ and discovered that we are parte of a piramid constelation.
 
 2. Adding magnitude to the file
 3. A camera could sail through the stars (already working - but the user cannot control the motion, yet.)
-4. New:  planning to switch view from any star.  Presently from the Alfa1,2, and Proxima Centaury - which are drawn as
-a large yellow ball.  Where is Earth's sun?  To look up from Alfa is not so nice.  
-So I centered the origin of coordinates in it and girate around it.  There is also an automatic zooming of the whole
-sistem.
+4. New:  planning to switch the origin of coordinates in any star.  Presently Sirius.
+Where is Earth's sun? Where is Alfa Centauri?.  
+So I centered the origin of coordinates in it and girate around it.
+There is also an automatic zooming of the whole sistem.
 
 
 
