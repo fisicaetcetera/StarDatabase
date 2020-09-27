@@ -19,7 +19,7 @@ function preload() {
 
 function setup() {
   star = data.star;
-  createP("Star datbase by Jay Crossler");
+  createP("Star database by Jay Crossler");
   createP("js code by Enivaldo Bonelli");
   createP("Instructions below");
   createCanvas(1366, 700, WEBGL);
@@ -66,6 +66,7 @@ function draw() {
     push()
     translate(0, 0, 0)
     rotateY(angle);
+    rotateX(angle/2);
     starx = star[i].galX * 30 - star[estrela].galX * 30;
     stary = star[i].galY * 30 - star[estrela].galY * 30;
     starz = star[i].galZ * 30 - star[estrela].galZ * 30;
