@@ -22,7 +22,7 @@ function setup() {
   createP("Star datbase by Jay Crossler");
   createP("js code by Enivaldo Bonelli");
   createP("Instructions below");
-  createCanvas(600, 400, WEBGL);
+  createCanvas(1366, 700, WEBGL);
   alfax = star[9].galX;
   alfay = star[9].galY;
   alfaz = star[9].galZ;
