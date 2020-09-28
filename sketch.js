@@ -80,11 +80,11 @@ function draw() {
     starx = star[i].galX * 30 - star[estrela].galX * 30;
     stary = star[i].galY * 30 - star[estrela].galY * 30;
     starz = star[i].galZ * 30 - star[estrela].galZ * 30;
-    alfadist = star[estrela].dist;
-    cor = star[estrela].color;
+    stardist = star[estrela].dist;
+    cor = star[i].color;
 
     translate(starx, stary, starz);
-    distancia = abs(star[i].dist - alfadist);
+    distancia = abs(star[i].dist - stardist);
 
     fill(cor);
     sphere(radius / (0.5 + distancia / 8));
