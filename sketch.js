@@ -11,7 +11,8 @@ let starx, stary, starz, stardist;
 let radiusSun = 3.5;
 let estrela = 9;
 let f;
-let myFont;
+let lookup = 0;
+let lookright = 0;
 
 function preload() {
   data = loadJSON("stars_named.json");
@@ -22,13 +23,22 @@ function setup() {
   createP("Star database by Jay Crossler");
   createP("js code by Enivaldo Bonelli");
   createP("Instructions below");
-  createCanvas(1366, 700, WEBGL);
+  createCanvas(600, 400, WEBGL);
   alfax = star[9].galX;
   alfay = star[9].galY;
   alfaz = star[9].galZ;
   //botão para controla saltos
   jump = createButton("Jump!");
   jump.mousePressed(Jump);
+  //botão para olhar par trás
+  rear = createButton("Rear");
+  rear.mousePressed(Rear);
+
+  //botão para olhar par cima
+  up = createButton("Up");
+  up.mousePressed(Up);
+
+
   h3 = createElement('h5', 'Estrela perto de nós');
   h3.html(star[estrela].starName);
   createP("Instructions: you travel through the galaxy.  When you click 'Jump', you jump through hyperspace to another star, name shown.")
@@ -51,13 +61,14 @@ function draw() {
   angle -= 0.005
   let fc = 0.001;
   //camera(sin(frameCount * fc) * 50, cos(frameCount * fc) * 50, sin(frameCount * fc) * 50, 0,0,0, 0, 1, 0);
-  camera(0, 0, 250 * sin(frameCount * fc*3), 0, 0,0,0, 1, 0);
+  camera(lookup * 250 * sin(-frameCount * fc * 3), 0, 250 * sin(frameCount * fc * 3), 0, 0, 0, lookright, 1, lookup);
 
   //"Sirius", "id":601, "galX":-5.895, "galY":-6.152, "galZ":-1.167,  "dist":8.6, "color":"#baccff"}, 
 
 
 
-  for (let i = 0; i < star.length - 1 && i != estrela; i++) {
+  //for (let i = 0; i < star.length - 1 && i != estrela; i++) {
+  for (let i = 0; i < star.length - 1; i++) {
     //translate(0, 0, mouseY / 30);
     //beginShape();
     radius = radiusSun;
@@ -66,7 +77,6 @@ function draw() {
     push()
     translate(0, 0, 0)
     rotateY(angle);
-    rotateX(angle/2);
     starx = star[i].galX * 30 - star[estrela].galX * 30;
     stary = star[i].galY * 30 - star[estrela].galY * 30;
     starz = star[i].galZ * 30 - star[estrela].galZ * 30;
@@ -88,6 +98,14 @@ function Jump() {
   redraw();
 }
 
-//function mouseReleased() {
-//  loop();
-//}
+function Rear() {
+  angle += PI;
+}
+
+function Up() {
+if(lookup == 0){
+  lookup = 1;
+} else {
+  lookup = 0;
+}
+}
