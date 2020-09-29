@@ -1,7 +1,10 @@
+// Going to have a botton 'go home' taht will make jumps
+//to get to the Sirius sector
+//
 // To include a camera
 // that flies through the stars
 // Can especify colors of stars or use the color from the data
-// Each loop from the point of view of the next star.  Starts // with Sirius.
+// Each loop from the point of view of the next star.  Starts // at random.
 let angle = 0;
 let star;
 let data;
@@ -13,6 +16,7 @@ let estrela = 9;
 let f;
 let lookup = 0;
 let lookright = 0;
+let distanceTraveled = 0;
 
 function preload() {
   data = loadJSON("stars_named.json");
@@ -20,16 +24,18 @@ function preload() {
 
 function setup() {
   star = data.star;
-  createP("Star database by Jay Crossler");
-  createP("js code by Enivaldo Bonelli");
-  createP("Instructions below");
-  createCanvas(1366, 550, WEBGL);
+
+  createCanvas(600, 400, WEBGL);
+  //createCanvas(1366, 450, WEBGL);
   alfax = star[9].galX;
   alfay = star[9].galY;
   alfaz = star[9].galZ;
   //botão para controla saltos
   jump = createButton("Jump!");
   jump.mousePressed(Jump);
+  //botao para ir para o setor de Sírio
+  goHome = createButton("Go Home");
+  goHome.mousePressed(GoHome);
   //botão para olhar par trás
   rear = createButton("Rear");
   rear.mousePressed(Rear);
@@ -41,8 +47,9 @@ function setup() {
 
   h3 = createElement('h5', 'Estrela perto de nós');
   h3.html(star[estrela].starName);
-  createP("Instructions: you travel through the galaxy.  When you click 'Jump', you jump through hyperspace to another star, name shown.")
-  createP("When your ship passes by the star, the camera will reverse to show it again.");
+    createP("Star database adapted by J. Crossler, js code by E. Bonelli, v202009291351");
+  createP("Instructions: you travel through the galaxy.  When you click 'Jump', you jump through hyperspace to another star, name shown.  Clicking 'Go Home' will take you to the Sirius sector, after some jumps.")
+  createP("When your ship passes by the star, the camera will reverse to show it again, on the other sideof the ship.");
 
   //lista estrelas
   //  for (let is = 0; is < star.length; is++) {
@@ -80,11 +87,11 @@ function draw() {
     starx = star[i].galX * 30 - star[estrela].galX * 30;
     stary = star[i].galY * 30 - star[estrela].galY * 30;
     starz = star[i].galZ * 30 - star[estrela].galZ * 30;
-    stardist = star[estrela].dist;
+    alfadist = star[estrela].dist;
     cor = star[i].color;
 
     translate(starx, stary, starz);
-    distancia = abs(star[i].dist - stardist);
+    distancia = abs(star[i].dist - alfadist);
 
     fill(cor);
     sphere(radius / (0.5 + distancia / 8));
@@ -95,6 +102,12 @@ function draw() {
 
 function Jump() {
   estrela = floor(random(star.length - 1));
+  redraw();
+}
+
+
+function GoHome() {
+  estrela = floor(random(0, estrela));
   redraw();
 }
 
