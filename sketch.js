@@ -19,14 +19,14 @@ let lookright = 0;
 let distanceTraveled = 0;
 
 function preload() {
-  data = loadJSON("stars_named.json");
+  data = loadJSON("stars-all.json");
 }
 
 function setup() {
   star = data.star;
 
   //createCanvas(600, 400, WEBGL);
-  createCanvas(1366, 630, WEBGL);
+  createCanvas(1366, 650, WEBGL);
   alfax = star[9].galX;
   alfay = star[9].galY;
   alfaz = star[9].galZ;
@@ -47,7 +47,7 @@ function setup() {
 
   h3 = createElement('h5', 'Estrela perto de nós');
   h3.html(star[estrela].starName);
-    createP("Star database adapted by J. Crossler, js code by E. Bonelli, v202009291351");
+    createP("Star database adapted by J. Crossler (2612 stars!), js code by E. Bonelli, v202009291351");
   createP("Instructions: you travel through the galaxy.  When you click 'Jump', you jump through hyperspace to another star, name shown.  Clicking 'Go Home' will take you to the Sirius sector, after some jumps.")
   createP("When your ship passes by the star, the camera will reverse to show it again, on the other sideof the ship.");
 
