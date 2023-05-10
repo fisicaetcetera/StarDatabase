@@ -1,4 +1,4 @@
-// Going to have a botton 'go home' taht will make jumps
+// Going to have a botton 'go home' that will make jumps
 //to get to the Sirius sector
 //
 // To include a camera
@@ -19,14 +19,14 @@ let lookright = 0;
 let distanceTraveled = 0;
 
 function preload() {
-  data = loadJSON("stars-all.json");
+  data = loadJSON("stars_named.json");
 }
 
 function setup() {
   star = data.star;
 
-  //createCanvas(600, 400, WEBGL);
-  createCanvas(1366, 650, WEBGL);
+  createCanvas(600, 400, WEBGL);
+  //createCanvas(1366, 450, WEBGL);
   alfax = star[9].galX;
   alfay = star[9].galY;
   alfaz = star[9].galZ;
@@ -47,7 +47,7 @@ function setup() {
 
   h3 = createElement('h5', 'Estrela perto de nós');
   h3.html(star[estrela].starName);
-    createP("Star database adapted by J. Crossler (2612 stars!), js code by E. Bonelli, v202009291351");
+    createP("Star database adapted by J. Crossler, js code by E. Bonelli, v202009291351");
   createP("Instructions: you travel through the galaxy.  When you click 'Jump', you jump through hyperspace to another star, name shown.  Clicking 'Go Home' will take you to the Sirius sector, after some jumps.")
   createP("When your ship passes by the star, the camera will reverse to show it again, on the other sideof the ship.");
 
@@ -71,8 +71,6 @@ function draw() {
   camera(lookup * 250 * sin(-frameCount * fc * 3), 0, 250 * sin(frameCount * fc * 3), 0, 0, 0, lookright, 1, lookup);
 
   //"Sirius", "id":601, "galX":-5.895, "galY":-6.152, "galZ":-1.167,  "dist":8.6, "color":"#baccff"}, 
-
-
 
   //for (let i = 0; i < star.length - 1 && i != estrela; i++) {
   for (let i = 0; i < star.length - 1; i++) {
