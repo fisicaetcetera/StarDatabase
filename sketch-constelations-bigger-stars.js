@@ -2,6 +2,7 @@
 //not having magnitude or actual radius, will make sure they appear on the plot
 //by enlarging radius with distance
 let angle = 0;
+let angleyy = 0
 let star;
 let data;
 let cor;
@@ -34,41 +35,43 @@ function setup() {
   goHome = createButton("Go Home");
   goHome.mousePressed(GoHome);
   //botão para olhar par trás
-  rear = createButton("Rear");
-  rear.mousePressed(Rear);
+  right = createButton("Direita");
+  right.mousePressed(Direita);
   //botão para olhar par cima
   up = createButton("Up");
   up.mousePressed(Up);
   // botão para pausar (depois)
 
   h3 = createElement('h5', 'Estrela perto de nós');
-  h3.html(star[estrela].starName);
+  //h3.html(star[estrela].starName);
     createP("Star database adapted by J. Crossler, js code by E. Bonelli, v202103151134");
   createP("Travel through the galaxy: ");
   createP("'Jump': you jump to another star, name shown.");
   createP("'Go Home': takes you to the Sirius sector, after some jumps.");
-  createP(" 'rear' : shows what is behind.");
+  createP(" 'right' : girates around the vertical.");
   createP("'Up': togle motion to make stars go up / down");
   createP("When your ship passes by the star in question, the camera will reverse to show it again, on the other side of the ship.");
 
   estrela = floor(random(star.length - 1));
+  epn = 'Estrela: ' + star[estrela].starName + ' , Distancia: ' + star[estrela].dist + ', Cor: ' + star[estrela].color;
+  h3.html(epn);
 }
 
 
 function draw() {
   background(0);
   normalMaterial();
-  h3.html(star[estrela].starName);
-
   //translate(0, 0, 0);
-  angle -= 0.005
+  //angle -= 0.005
   let fc = 0.001;
   //camera(sin(frameCount * fc) * 50, cos(frameCount * fc) * 50, sin(frameCount * fc) * 50, 0,0,0, 0, 1, 0);
  camera(500 * sin(-frameCount * fc * 3), 0, 500 * sin(frameCount * fc * 3), 0, 0, 0, lookright, 1, lookup);
+ rotateZ(5*fc *frameCount);
 
   //"Sirius", "id":601, "galX":-5.895, "galY":-6.152, "galZ":-1.167,  "dist":8.6, "color":"#baccff"}, 
 
-
+  epn = 'Estrela: ' + estrela +' '+ star[estrela].starName + ' , Distancia: ' + star[estrela].dist + ', Cor: ' + star[estrela].color;
+  h3.html(epn);
 
   //for (let i = 0; i < star.length - 1 && i != estrela; i++) {
   for (let i = 0; i < star.length - 1; i++) {
@@ -79,7 +82,8 @@ function draw() {
 
     push()
     translate(0, 0, 0)
-    rotateY(angle);
+    rotateY(angleyy);
+    rotateX(angle);
     xestela = star[estrela].galX * 100;
     yestela = star[estrela].galY * 100;
     zestela = star[estrela].galZ * 100;
@@ -125,12 +129,6 @@ function draw() {
     pop();
   }
 }
-function mousePressed(){
-  noLoop();
-}
-function mouseReleased(){
-  loop();
-}
 
 function Jump() {
   estrela = floor(random(star.length - 1));
@@ -139,18 +137,15 @@ function Jump() {
 
 
 function GoHome() {
-  estrela = floor(random(0, estrela));
+  //estrela = floor(random(0, estrela));  //Para SOL
+  estrela = floor(random(81, estrela));  //Para VEGA
   redraw();
 }
 
-function Rear() {
-  angle += PI;
+function Direita() {
+  angleyy += 0.3;
 }
 
 function Up() {
-if(lookup == 0){
-  lookup = 1;
-} else {
-  lookup = 0;
-}
+angle += 0.3;
 }
