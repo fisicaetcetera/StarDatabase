@@ -34,17 +34,17 @@ function setup() {
   //botao para ir para o setor de Sírio
   goHome = createButton("Go Home");
   goHome.mousePressed(GoHome);
-  //botão para olhar par trás
+  //botão para olhar para trás
   right = createButton("Direita");
   right.mousePressed(Direita);
-  //botão para olhar par cima
+  //botão para olhar para cima
   up = createButton("Up");
   up.mousePressed(Up);
   // botão para pausar (depois)
 
   h3 = createElement('h5', 'Estrela perto de nós');
   //h3.html(star[estrela].starName);
-    createP("Star database adapted by J. Crossler, js code by E. Bonelli, v202103151134");
+  createP("Star database adapted by J. Crossler, js code by E. Bonelli, v202103151134");
   createP("Travel through the galaxy: ");
   createP("'Jump': you jump to another star, name shown.");
   createP("'Go Home': takes you to the Sirius sector, after some jumps.");
@@ -137,8 +137,8 @@ function Jump() {
 
 
 function GoHome() {
-  //estrela = floor(random(0, estrela));  //Para SOL
-  estrela = floor(random(81, estrela));  //Para VEGA
+  estrela = floor(random(0, estrela));  //Para SOL
+  //estrela = floor(random(399, estrela));  //Para Aldebaran
   redraw();
 }
 
